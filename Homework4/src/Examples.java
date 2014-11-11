@@ -5,7 +5,7 @@ class Examples {
 	}
 	/******************** Create Soccer Tournament **********************/
 	
-	// SAMn: Soccer Advanced Match n; SIMn: Soccer Init Match n
+	// sAMn: Soccer Advanced Match n; sIMn: Soccer Init Match n
 	//			      sIM1
 	//			    /
 	//		   sAM1 - sIM2
@@ -29,26 +29,48 @@ class Examples {
 	Venue soccerField2 = new Venue("The Final", 50);
 	
 	// Create Soccer Matches
-	SoccerScore soccerMatch1 = new SoccerScore(1, 2, true);
-	SoccerScore soccerMatch2 = new SoccerScore(2, 1, false);
-	SoccerScore soccerMatch3 = new SoccerScore(2, 3, true);
-	SoccerScore soccerMatch4 = new SoccerScore(5, 2, true);
-	SoccerScore soccerMatch5 = new SoccerScore(6, 1, false);
-	SoccerScore soccerMatch6 = new SoccerScore(7, 3, true);
-	SoccerScore soccerMatch7 = new SoccerScore(1, 1, true);
+	SoccerScore soccerScore1 = new SoccerScore(1, 2, true);
+	SoccerScore soccerScore2 = new SoccerScore(2, 1, false);
+	SoccerScore soccerScore3 = new SoccerScore(2, 3, true);
+	SoccerScore soccerScore4 = new SoccerScore(5, 2, true);
+	SoccerScore soccerScore5 = new SoccerScore(6, 1, false);
+	SoccerScore soccerScore6 = new SoccerScore(7, 3, true);
+	SoccerScore soccerScore7 = new SoccerScore(1, 1, true);
 	
 	// Create Soccer Games: Init Matches
-	InitMatch sIM1 = new InitMatch(new MatchData(soccerTeam1, soccerTeam2, soccerMatch1, soccerField1));
-	InitMatch sIM2 = new InitMatch(new MatchData(soccerTeam3, soccerTeam4, soccerMatch2, soccerField1));
-	InitMatch sIM3 = new InitMatch(new MatchData(soccerTeam5, soccerTeam6, soccerMatch3, soccerField1));
-	InitMatch sIM4 = new InitMatch(new MatchData(soccerTeam7, soccerTeam8, soccerMatch4, soccerField1));
+	InitMatch sIM1 = new InitMatch(new MatchData(soccerTeam1, soccerTeam2, soccerScore1, soccerField1));
+	InitMatch sIM2 = new InitMatch(new MatchData(soccerTeam3, soccerTeam4, soccerScore2, soccerField1));
+	InitMatch sIM3 = new InitMatch(new MatchData(soccerTeam5, soccerTeam6, soccerScore3, soccerField1));
+	InitMatch sIM4 = new InitMatch(new MatchData(soccerTeam7, soccerTeam8, soccerScore4, soccerField1));
 	
 	// Create Soccer Games: Advanced Match
-	AdvancedMatch sAM1 = new AdvancedMatch(new MatchData(soccerTeam2, soccerTeam3, soccerMatch5, soccerField1),
+	AdvancedMatch sAM1 = new AdvancedMatch(new MatchData(soccerTeam2, soccerTeam3, soccerScore5, soccerField1),
 			sIM1, sIM2);
-	AdvancedMatch sAM2 = new AdvancedMatch(new MatchData(soccerTeam6, soccerTeam8, soccerMatch6, soccerField1),
+	AdvancedMatch sAM2 = new AdvancedMatch(new MatchData(soccerTeam6, soccerTeam8, soccerScore6, soccerField1),
 			sIM1, sIM2);
-	AdvancedMatch sAM3 = new AdvancedMatch(new MatchData(soccerTeam2, soccerTeam6, soccerMatch7, soccerField2),
+	AdvancedMatch sAM3 = new AdvancedMatch(new MatchData(soccerTeam2, soccerTeam6, soccerScore7, soccerField2),
 			sIM1, sIM2); // Final
 	
+	/******************** Create Swimming Tournament **********************/
+	// wAMn: Swimming Advanced Match n; wIMn: Swimming Init Match n
+	//		   wIM1
+	//	wAM  <
+	//		   wIM2
+	
+	// Create example of swimming players
+	Swimming swimmer1 = new Swimming("The Pooler", 1573);
+	Swimming swimmer2 = new Swimming("The Laker", 23);
+	Swimming swimmer3 = new Swimming("The Looser", 1);
+	Swimming swimmer4 = new Swimming("The Oceanear", 3);
+	
+	// Create the Pool
+	Venue pool = new Venue("Ocean", 4000);
+	
+	// Create swimming matches
+	InitMatch wIM1 = new InitMatch(new MatchData(swimmer1, swimmer2, new SwimmingScore(3, 5), pool));
+	InitMatch wIM2 = new InitMatch(new MatchData(swimmer3, swimmer4, new SwimmingScore(4, 2), pool));
+	
+	// Create final match of tournament
+	AdvancedMatch wAM = new AdvancedMatch(new MatchData(swimmer2, swimmer3, new SwimmingScore(1,1), pool), 
+			wIM1, wIM2);
 }
