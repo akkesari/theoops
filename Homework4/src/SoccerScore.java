@@ -1,5 +1,5 @@
 // Keeps score of soccer match
-class SoccerScore extends AbstractITeam implements IRanked {
+class SoccerScore implements IScore{
 	int goals1;
 	int goals2;
 	boolean usedExtraTime;
@@ -11,18 +11,6 @@ class SoccerScore extends AbstractITeam implements IRanked {
 		this.usedExtraTime = usedExtraTime;
 	}
 	
-	// True if the score is valid: "if the two teams have the same number
-	// of goals, extra time had to have been played."
-	public boolean isValid(){
-		if (goals1 == goals2)
-				return usedExtraTime;
-		return true;
-	}
-	
-	// Returns the winner
-	public boolean getWinner(){
-		return this.goals1 > this.goals2;
-	}
 
 	public boolean hasBetterRanking() {
 		// TODO Auto-generated method stub

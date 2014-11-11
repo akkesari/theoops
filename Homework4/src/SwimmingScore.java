@@ -1,5 +1,5 @@
 
-class SwimmingScore extends AbstractIRanked{
+class SwimmingScore implements IScore{
 	int time1;
 	int time2;
 	
