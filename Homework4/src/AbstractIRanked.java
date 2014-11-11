@@ -8,4 +8,7 @@ abstract class AbstractIRanked implements IRanked{
 			this.ranking = ranking;
 	}
 	
+	public int getScore(){
+		return ranking;
+	}
 }
