@@ -13,20 +13,8 @@ class MatchData {
 		this.matchVenue = matchVenue;
 	}
 	
-	// Return the result of isValid
-	boolean isScoreValid(){
-		return this.score.isValid();
-	}
-	
 	// Returns the capacity of the venue
 	int venueCapacity(){
 		return this.matchVenue.capacity;
-	}
-	
-	// Returns the name of the winner
-	String getWinnerName(){
-		if (score.getWinner())
-			return contestant1;
-		return contestant2;
 	}
 }
