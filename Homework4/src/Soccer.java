@@ -1,4 +1,3 @@
-
 class Soccer extends AbstractITeam implements IRanked{
 	
 	Soccer(String teamName, int numPlayers, String captain, int ranking){
