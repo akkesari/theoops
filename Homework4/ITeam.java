@@ -1,0 +1,4 @@
+
+interface ITeam extends IContestant {
+	
+}

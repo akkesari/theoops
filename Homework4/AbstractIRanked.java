@@ -1,0 +1,18 @@
+
+abstract class AbstractIRanked implements IRanked{
+	String name;
+	int ranking;
+	
+	AbstractIRanked(String name, int ranking){	
+			this.name = name;
+			this.ranking = ranking;
+	}
+	
+	public int getScore(){
+		return ranking;
+	}
+	
+	public String getName(){
+		return this.name;
+	}
+}

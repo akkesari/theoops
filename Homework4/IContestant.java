@@ -1,0 +1,4 @@
+
+interface IContestant {
+	String getName();
+}
