@@ -1,5 +1,5 @@
 // Keeps score of soccer match
-class SoccerScore implements IScore {
+class SoccerScore extends AbstractITeam implements IRanked {
 	int goals1;
 	int goals2;
 	boolean usedExtraTime;
@@ -22,5 +22,10 @@ class SoccerScore implements IScore {
 	// Returns the winner
 	public boolean getWinner(){
 		return this.goals1 > this.goals2;
+	}
+
+	public boolean hasBetterRanking() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

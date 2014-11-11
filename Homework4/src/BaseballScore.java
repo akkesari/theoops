@@ -1,5 +1,5 @@
 // Keeps the results of a baseball match
-class BaseballScore implements IScore{
+class BaseballScore extends AbstractITeam{
 	int runs1;
 	int runs2;
 	int innings;
