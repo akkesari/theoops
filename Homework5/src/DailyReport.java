@@ -2,13 +2,13 @@
  * Stores the max and min temperature for a given day/month/year. Contains methods to access data.
  */
 public class DailyReport {
-	private double tempHigh;
-	private double tempLow;
+	private Reading tempLow;
+	private Reading tempHigh;
 	private int day;
 	private int month;
 	private int year;
 	
-	DailyReport(double tempHigh, double tempLow, int day, int month, int year){
+	DailyReport(Reading tempHigh, Reading tempLow, int day, int month, int year){
 		this.tempHigh = tempHigh;
 		this.tempLow = tempLow;
 		this.day = day;
@@ -29,11 +29,11 @@ public class DailyReport {
 	}
 	
 	public double getHigh(){
-		return this.tempHigh;
+		return this.tempHigh.getTemp();
 	}
 	
 	public double getLow(){
-		return this.tempLow;
+		return this.tempLow.getTemp();
 	}
 
 }
