@@ -34,7 +34,7 @@ public class TheKey {
 	/*
 	 * Creates the key for the HashMap
 	 * 
-	 * Make use of a bijective mapping with the Cantor Pairing Function
+	 * Makes use of a bijective mapping with the Cantor Pairing Function
 	 * 
 	 * @param none
 	 * @return int

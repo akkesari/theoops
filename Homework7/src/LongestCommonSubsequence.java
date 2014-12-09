@@ -50,7 +50,7 @@ public class LongestCommonSubsequence {
 		// Check if this prompt has been previously computed
 		TheKey key = new TheKey(s1Pos, s2Pos);
 		if (memtab.containsKey(key))
-			return memtab.get(key);
+			return memtab.get(key); 
 		// Limit program to size of strings
 		if (s1Pos >= s1.length() || s2Pos >= s2.length())
 			return "";
