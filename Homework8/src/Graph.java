@@ -54,5 +54,25 @@ public class Graph implements IGraph{
 		return node1.hasRoute(node2, new LinkedList<Node>());
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see IGraph#getNetworks()
+	 */
+	public LinkedList<Network> getNetworks(){
+		LinkedList<Network> tempList = new LinkedList<Network>();
+		
+		for (Node n: nodes){
+			tempList.add(this.getNetwork(n));
+		}
+		
+		return tempList;
+	}
+	
+	/*
+	 * Returns a list of nodes that are connected to a given node
+	 * 
+	 * @param 
+	 */
+	
 	
 }

@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 /*
  * Signatures for Graph class
  * 
@@ -38,4 +39,12 @@ public interface IGraph {
 	 * @return Boolean True if there is a path between two nodes
 	 */
 	boolean hasRoute(Node node1, Node node2);
+	
+	/*
+	 * Returns a list of networks
+	 * 
+	 * @param none
+	 * @return LinkedList<Network> 
+	 */
+	LinkedList<Network> getNetworks();
 }

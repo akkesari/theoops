@@ -65,5 +65,13 @@ public class Node {
 		return false;
 	}
 	
-	
+	/*
+	 * Returns the name of the city
+	 * 
+	 * @param none
+	 * @return String Name of city
+	 */
+	public String getName(){
+		return cityName;
+	}
 }
