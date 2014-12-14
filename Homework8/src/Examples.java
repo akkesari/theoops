@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 import tester.Tester;
 /*
  * Instantiates all classes and methods in program to provide example of functionality and testing
@@ -88,6 +90,35 @@ public class Examples {
 				t.checkExpect(graph.hasRoute(f, k), false) && 
 				t.checkExpect(graph.hasRoute(p, l), false);
 				
+	}
+	
+	/*
+	 * Test getNetworks method and its associated methods
+	 * 
+	 * @param none
+	 */
+	boolean testGetNetworks(Tester t){
+		LinkedList<Node> tempList1 = new LinkedList<Node>(); // Subset 1 as Nodes
+		tempList1.add(a); tempList1.add(b); tempList1.add(c); tempList1.add(d);
+		tempList1.add(e); tempList1.add(f); tempList1.add(g); tempList1.add(h);  tempList1.add(i);
+		LinkedList<String> tempList1r = new LinkedList<String>(); // Subset 1 as Strings
+		tempList1r.add("a"); tempList1r.add("b"); tempList1r.add("c"); tempList1r.add("d");
+		tempList1r.add("e"); tempList1r.add("f"); tempList1r.add("g"); tempList1r.add("h");  tempList1r.add("i");
+		LinkedList<String> tempList2 = new LinkedList<String>(); // Subset 2 as Strings
+		tempList2.add("j"); tempList2.add("k"); tempList2.add("l"); 
+		LinkedList<String> tempList3 = new LinkedList<String>(); // Subset 3 as Strings
+		tempList3.add("m"); tempList3.add("n"); tempList3.add("o"); tempList3.add("p"); 
+		
+		LinkedList<Network> networks = this.graph.getNetworks();
+		// Print result
+		for (Network n: networks)
+			System.out.println(n.getCities());
+		
+		return
+				t.checkExpect((new Network()).getNetwork(tempList1).getCities(), tempList1r) &&
+				t.checkExpect(networks.get(0).getCities(), tempList1r) &&
+				t.checkExpect(networks.get(1).getCities(), tempList2) &&
+				t.checkExpect(networks.get(2).getCities(), tempList3);
 	}
 }
 

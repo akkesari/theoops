@@ -22,6 +22,20 @@ public class Network {
 	 * @return LinkedList<Node> 
 	 */
 	Network getNetwork(LinkedList<Node> visited){
+		for (Node n: visited){
+			this.cities.add(n.cityName);
+		}
 		
+		return this;
+	}
+	
+	/*
+	 * Returns the list of cities
+	 * 
+	 * @param none
+	 * @return List of cities as a string
+	 */
+	LinkedList<String> getCities(){
+		return this.cities;
 	}
 }

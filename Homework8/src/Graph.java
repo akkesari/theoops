@@ -59,20 +59,34 @@ public class Graph implements IGraph{
 	 * @see IGraph#getNetworks()
 	 */
 	public LinkedList<Network> getNetworks(){
-		LinkedList<Network> tempList = new LinkedList<Network>();
+		LinkedList<Network> networks = new LinkedList<Network>();
+		LinkedList<Node> visited = new LinkedList<Node>();
 		
-		for (Node n: nodes){
-			tempList.add(this.getNetwork(n));
+		for (Node n: this.nodes){
+			if (!visited.contains(n)){
+				LinkedList<Node> moreNodes = this.getConnectedNodes(n, visited);
+				visited.addAll(moreNodes);
+				networks.add((new Network()).getNetwork(moreNodes));
+			}
 		}
 		
-		return tempList;
+		return networks;
 	}
 	
-	/*
-	 * Returns a list of nodes that are connected to a given node
-	 * 
-	 * @param 
-	 */
+	public LinkedList<Node> getConnectedNodes(Node start, LinkedList<Node> visited){
+		LinkedList<Node> reachable = new LinkedList<Node>();
+		
+		for (Node n: this.nodes){
+			if (!visited.contains(n)){
+				if (this.hasRoute(n, start)){
+					reachable.add(n);
+					visited.add(n);
+				}
+			}
+		}
+		
+		return reachable;
+	}
 	
 	
 }
